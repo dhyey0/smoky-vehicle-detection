@@ -1,18 +1,30 @@
-# Python virtual environment
+# --- Virtual Environments ---
+# Ignore the virtual environment folders
 venv/
-smoke_detection_env/
+pytorch_smoke_env/
 
-# Datasets and annotations
+# --- Datasets & Annotations ---
+# Best practice is to not commit large datasets and annotations
 dataset/
 annotations/
 
-# Trained models and logs
-logs/
+# --- Model Files & Logs ---
+# Ignore trained model files from PyTorch (.pth, .pt) and Keras (.h5)
+*.pth
+*.pt
 *.h5
+logs/
 
-# IDE and OS files
-.vscode/
-.idea/
+# --- Python & IDE Specific ---
+# Ignore Python bytecode, caches, and IDE folders
 __pycache__/
 *.pyc
+.ipynb_checkpoints/
+.torch/
+.vscode/
+.idea/
+
+# --- OS Specific ---
+# Ignore macOS specific files
 .DS_Store
+requirements.txt
