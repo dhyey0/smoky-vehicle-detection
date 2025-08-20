@@ -41,8 +41,9 @@ def main():
     val_size = len(dataset) - train_size
     train_dataset, val_dataset = random_split(dataset, [train_size, val_size])
 
-    train_loader = DataLoader(train_dataset, batch_size=1, shuffle=True, collate_fn=collate_fn)
-    # train_loader = DataLoader(train_dataset, batch_size=4, shuffle=True, collate_fn=collate_fn, num_workers=2)
+    # train_loader = DataLoader(train_dataset, batch_size=1, shuffle=True, collate_fn=collate_fn)
+    train_loader = DataLoader(train_dataset, batch_size=4, shuffle=True, collate_fn=collate_fn, num_workers=2)
+    # print("a")
     val_loader = DataLoader(val_dataset, batch_size=1, shuffle=False, collate_fn=collate_fn)
     print(f"Training on {len(train_dataset)} images, validating on {len(val_dataset)} images.")
 

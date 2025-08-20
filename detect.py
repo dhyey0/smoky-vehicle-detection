@@ -14,7 +14,7 @@ def main():
     num_classes = 2 # 1 class (smoke) + background
     MODEL_PATH = "smoke_mask_rcnn_model.pth"
     DATASET_DIR = "./dataset"
-    CONFIDENCE_THRESHOLD = 0.7
+    CONFIDENCE_THRESHOLD = 0.3
 
     # --- Load Model ---
     model = get_model_instance_segmentation(num_classes)
@@ -28,7 +28,9 @@ def main():
         print("No images found in the dataset directory.")
         return
     
-    image_name = random.choice(image_files)
+    # image_name = random.choice(image_files)
+    image_name = "image30.jpg"
+
     image_path = os.path.join(DATASET_DIR, image_name)
     print(f"Running inference on: {image_path}")
 
@@ -58,9 +60,10 @@ def main():
             # Draw mask
             mask_binary = (mask[0] > 0.5)
             color = np.array([0, 0, 255]) # Blue color for mask
-            masked_img = np.where(mask_binary[..., None], color, img)
+            # masked_img = np.where(mask_binary[..., None], color, img)
+            # img = cv2.addWeighted(img, 0.5, masked_img, 0.5, 0)
+            masked_img = np.where(mask_binary[..., None], color, img).astype(np.uint8)
             img = cv2.addWeighted(img, 0.5, masked_img, 0.5, 0)
-            
             # Draw bounding box
             pt1 = (int(box[0]), int(box[1]))
             pt2 = (int(box[2]), int(box[3]))

@@ -28,3 +28,4 @@ __pycache__/
 # Ignore macOS specific files
 .DS_Store
 requirements.txt
+smoke_mask_rcnn_model.pth

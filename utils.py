@@ -69,8 +69,6 @@ class SmokeDataset(Dataset):
     def __len__(self):
         return len(self.ids)
 
-# --- REMOVED custom ToTensor class ---
-
 # --- UPDATED get_transform function ---
 def get_transform():
     # This now returns a standard transform pipeline that only processes the image
