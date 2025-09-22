@@ -1,9 +1,10 @@
+#check_dataset.py
 import os
 import json
 import cv2
 
 ANNOTATIONS_FILE = "./annotations/annotations.json"
-DATASET_DIR = "./dataset"
+DATASET_DIR = "./dataset_resized"
 
 def check_dataset_integrity():
     """

@@ -1,3 +1,4 @@
+# fix_annotations.py
 import json
 
 ORIGINAL_ANNOTATIONS_FILE = "./annotations/annotations.json"

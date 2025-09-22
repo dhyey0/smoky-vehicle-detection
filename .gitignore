@@ -6,13 +6,21 @@ pytorch_smoke_env/
 # --- Datasets & Annotations ---
 # Best practice is to not commit large datasets and annotations
 dataset/
+dataset_resized/
 annotations/
+new/
+new_resized/
+resize_whole/
+
 
 # --- Model Files & Logs ---
 # Ignore trained model files from PyTorch (.pth, .pt) and Keras (.h5)
 *.pth
 *.pt
 *.h5
+*.jpg
+*.png
+*.jpeg
 logs/
 
 # --- Python & IDE Specific ---
@@ -29,3 +37,6 @@ __pycache__/
 .DS_Store
 requirements.txt
 smoke_mask_rcnn_model.pth
+
+# --- Miscellaneous ---
+# Ignore miscellaneous files
